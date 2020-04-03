@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.rao.dao.UserLoginLogoutLogDao">
+
+    <resultMap id="UserLoginLogoutLogResultMap" type="com.rao.pojo.entity.UserLoginLogoutLog">
+        <id property="id" column="id"  />
+        <result property="userId" column="user_id" />
+        <result property="userName" column="user_name" />
+        <result property="phone" column="phone" />
+        <result property="type" column="type" />
+        <result property="ip" column="ip" />
+        <result property="country" column="country" />
+        <result property="province" column="province" />
+        <result property="city" column="city" />
+        <result property="area" column="area" />
+        <result property="isp" column="isp" />
+        <result property="createTime" column="create_time" />
+        <result property="userType" column="user_type" />
+        <result property="wxOpenid" column="wx_openid" />
+    </resultMap>
+
+    <!-- 定义可重用的SQL代码段，可以包含在其他语句中 -->
+    <sql id="base_column">
+		 id ,user_id ,user_name ,phone ,type ,ip ,country ,province ,city ,area ,isp ,create_time ,user_type ,wx_openid
+	</sql>
+
+    <sql id="base_value_column">
+		 #{id},#{userId},#{userName},#{phone},#{type},#{ip},#{country},#{province},#{city},#{area},#{isp},#{createTime},#{userType},#{wxOpenid}
+	</sql>
+
+</mapper>

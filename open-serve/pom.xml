@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>open-storage</module>
+        <module>open-support</module>
+        <module>open-content</module>
+        <module>open-user</module>
+        <module>open-quartz</module>
+        <module>open-log</module>
+        <module>open-message</module>
+        <module>open-payment</module>
+    </modules>
+
+    <!-- 父工程 -->
+    <parent>
+        <artifactId>open-life</artifactId>
+        <groupId>com.rao</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.rao</groupId>
+    <artifactId>open-serve</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <dependencies>
+
+        <!-- 本地 jar -->
+        <!-- 微服务基本 jar -->
+        <dependency>
+            <groupId>com.rao</groupId>
+            <artifactId>open-server-util</artifactId>
+        </dependency>
+        <!-- 微服务基本 jar -->
+        <!-- 本地 jar -->
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.rao.dao.campus.RainCampusDao">
+
+    <resultMap id="RainCampusResultMap" type="com.rao.pojo.entity.campus.RainCampus">
+        <id property="id" column="id"/>
+        <result property="campusName" column="campus_name"/>
+        <result property="campusLogo" column="campus_logo"/>
+        <result property="provinceCode" column="province_code"/>
+        <result property="provinceName" column="province_name"/>
+        <result property="cityCode" column="city_code"/>
+        <result property="cityName" column="city_name"/>
+        <result property="weight" column="weight"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <!-- 定义可重用的SQL代码段，可以包含在其他语句中 -->
+    <sql id="base_column">
+		 id ,campus_name ,campus_logo, province_code ,province_name ,city_code ,city_name ,weight ,status ,create_time ,update_time
+	</sql>
+
+    <sql id="base_value_column">
+		 #{id},#{campusName},#{campusLogo},#{provinceCode},#{provinceName},#{cityCode},#{cityName},#{weight},#{status},#{createTime},#{updateTime}
+	</sql>
+
+</mapper> 

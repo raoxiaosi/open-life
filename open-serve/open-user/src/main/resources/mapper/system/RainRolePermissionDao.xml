@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.rao.dao.system.RainRolePermissionDao">
+	
+	<resultMap id="RainRolePermissionResultMap" type="com.rao.pojo.entity.system.RainRolePermission">
+		<result property="roleId" column="role_id" />
+		<result property="permissionId" column="permission_id" />
+	</resultMap>
+	
+	<!-- 定义可重用的SQL代码段，可以包含在其他语句中 -->
+	<sql id="base_column">
+		 role_id ,permission_id
+	</sql>
+	
+	<sql id="base_value_column">
+		 #{roleId},#{permissionId}
+	</sql>
+
+	<!-- 保存角色权限关系 -->
+	<insert id="batchSaveRelation" parameterType="com.rao.pojo.entity.system.RainRolePermission">
+		INSERT INTO RAIN_ROLE_PERMISSION ( <include refid="base_column" /> )
+		values
+		<foreach collection="rolePermissions" item="item" index="index" separator=",">
+			(
+			#{item.roleId},#{item.permissionId}
+			)
+		</foreach>
+	</insert>
+	
+	<!-- 删除角色关联的所有 -->
+	<delete id="deleteByRoleIdAndPermissions">
+		DELETE FROM rain_role_permission WHERE role_id = #{roleId} 
+		AND permission_id IN
+		<foreach collection="permissionIds" item="permissionId" index="index" open="(" separator="," close=")">
+			#{permissionId}
+		</foreach>
+	</delete>
+
+</mapper>

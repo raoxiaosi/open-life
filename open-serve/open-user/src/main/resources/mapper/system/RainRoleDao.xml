@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.rao.dao.system.RainRoleDao">
+
+	<resultMap id="RainRoleResultMap" type="com.rao.pojo.entity.system.RainRole">
+		<id property="id" column="id"  />
+		<result property="roleName" column="role_name" />
+		<result property="roleCode" column="role_code" />
+		<result property="roleDesc" column="role_desc" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+	</resultMap>
+
+	<!-- 定义可重用的SQL代码段，可以包含在其他语句中 -->
+	<sql id="base_column">
+		 id ,role_name ,role_code, role_desc ,create_time ,update_time
+	</sql>
+
+	<sql id="base_value_column">
+		 #{id},#{roleName},#{roleCode},#{roleDesc},#{createTime},#{updateTime}
+	</sql>
+
+	<!-- 通过角色id查询 -->
+    <select id="findByRoleIdList" resultType="com.rao.pojo.entity.system.RainRole">
+		select
+		<include refid="base_column"/>
+		from rain_role
+		where id in
+		<foreach collection="roleIds" item="roleId" index="index" open="(" separator="," close=")">#{roleId}</foreach>
+	</select>
+
+</mapper>
