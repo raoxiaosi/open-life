@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rao</groupId>
-    <artifactId>rain</artifactId>
+    <artifactId>open-life</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -17,13 +17,13 @@
     </parent>
 
     <modules>
-        <module>rain-common</module>
-        <module>rain-feign</module>
-        <module>rain-configuration</module>
-        <module>rain-eureka</module>
-        <module>rain-gateway</module>
-        <module>rain-security-auth</module>
-        <module>rain-serve</module>
+        <module>open-common</module>
+        <module>open-feign</module>
+        <module>open-configuration</module>
+        <module>open-eureka</module>
+        <module>open-gateway</module>
+        <module>open-security-auth</module>
+        <module>open-serve</module>
     </modules>
 
     <properties>
@@ -48,12 +48,12 @@
         <spring.cloud.openfeign>2.0.1.RELEASE</spring.cloud.openfeign>
         <spring.cloud.netflix.hystrix>2.0.1.RELEASE</spring.cloud.netflix.hystrix>
         <springcloud.oauth2.version>1.2.2.RELEASE</springcloud.oauth2.version>
-        <rain.common.util.version>1.0-SNAPSHOT</rain.common.util.version>
-        <rain.extend.util.version>1.0-SNAPSHOT</rain.extend.util.version>
-        <rain.api.version>1.0-SNAPSHOT</rain.api.version>
-        <rain.server.util.version>1.0-SNAPSHOT</rain.server.util.version>
-        <rain.configuration.feign>1.0-SNAPSHOT</rain.configuration.feign>
-        <rain.payment.feign.client>1.0-SNAPSHOT</rain.payment.feign.client>
+        <open.common.util.version>1.0-SNAPSHOT</open.common.util.version>
+        <open.extend.util.version>1.0-SNAPSHOT</open.extend.util.version>
+        <open.api.version>1.0-SNAPSHOT</open.api.version>
+        <open.server.util.version>1.0-SNAPSHOT</open.server.util.version>
+        <open.configuration.feign>1.0-SNAPSHOT</open.configuration.feign>
+        <open.payment.feign.client>1.0-SNAPSHOT</open.payment.feign.client>
     </properties>
 
     <dependencyManagement>
@@ -170,39 +170,39 @@
             <!-- common -->
             <dependency>
                 <groupId>com.rao</groupId>
-                <artifactId>rain-common-util</artifactId>
-                <version>${rain.common.util.version}</version>
+                <artifactId>open-common-util</artifactId>
+                <version>${open.common.util.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.rao</groupId>
-                <artifactId>rain-extend-util</artifactId>
-                <version>${rain.extend.util.version}</version>
+                <artifactId>open-extend-util</artifactId>
+                <version>${open.extend.util.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.rao</groupId>
-                <artifactId>rain-api</artifactId>
-                <version>${rain.api.version}</version>
+                <artifactId>open-api</artifactId>
+                <version>${open.api.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.rao</groupId>
-                <artifactId>rain-server-util</artifactId>
-                <version>${rain.server.util.version}</version>
+                <artifactId>open-server-util</artifactId>
+                <version>${open.server.util.version}</version>
             </dependency>
             <!-- common -->
 
             <!-- configuration -->
             <dependency>
                 <groupId>com.rao</groupId>
-                <artifactId>rain-configuration-feign</artifactId>
-                <version>${rain.configuration.feign}</version>
+                <artifactId>open-configuration-feign</artifactId>
+                <version>${open.configuration.feign}</version>
             </dependency>
             <!-- configuration -->
 
             <!-- feign-client -->
             <dependency>
                 <groupId>com.rao</groupId>
-                <artifactId>rain-payment-feign-client</artifactId>
-                <version>${rain.payment.feign.client}</version>
+                <artifactId>open-payment-feign-client</artifactId>
+                <version>${open.payment.feign.client}</version>
             </dependency>
             <!-- feign-client -->
             <!-- 本地jar -->
