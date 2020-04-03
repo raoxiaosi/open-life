@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.rao</groupId>
+    <artifactId>rain</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <modules>
+        <module>rain-common</module>
+        <module>rain-feign</module>
+        <module>rain-configuration</module>
+        <module>rain-eureka</module>
+        <module>rain-gateway</module>
+        <module>rain-security-auth</module>
+        <module>rain-serve</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+
+        <mybatis.version>1.3.2</mybatis.version>
+        <mybatis.pagehelper.version>1.2.5</mybatis.pagehelper.version>
+        <mybatis.mapper.version>2.0.2</mybatis.mapper.version>
+        <fileupload.version>1.3.3</fileupload.version>
+        <jsoup.version>1.11.3</jsoup.version>
+        <hutool.version>4.2.1</hutool.version>
+        <shiro.version>1.4.0</shiro.version>
+        <swagger.version>2.9.1</swagger.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <user_agent_utils.version>1.21</user_agent_utils.version>
+        <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
+        <jackson.databind.version>2.9.10.1</jackson.databind.version>
+        <hibernate.validator.version>5.4.1.Final</hibernate.validator.version>
+        <spring.cloud.openfeign>2.0.1.RELEASE</spring.cloud.openfeign>
+        <spring.cloud.netflix.hystrix>2.0.1.RELEASE</spring.cloud.netflix.hystrix>
+        <springcloud.oauth2.version>1.2.2.RELEASE</springcloud.oauth2.version>
+        <rain.common.util.version>1.0-SNAPSHOT</rain.common.util.version>
+        <rain.extend.util.version>1.0-SNAPSHOT</rain.extend.util.version>
+        <rain.api.version>1.0-SNAPSHOT</rain.api.version>
+        <rain.server.util.version>1.0-SNAPSHOT</rain.server.util.version>
+        <rain.configuration.feign>1.0-SNAPSHOT</rain.configuration.feign>
+        <rain.payment.feign.client>1.0-SNAPSHOT</rain.payment.feign.client>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${mybatis.pagehelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mybatis.mapper.version}</version>
+            </dependency>
+            <!-- mybatis -->
+
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${fileupload.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${user_agent_utils.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk16</artifactId>
+                <version>${bcprov-jdk16.version}</version>
+            </dependency>
+
+            <!-- validate -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+            <!-- validate -->
+
+            <!-- feign + hystrix -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring.cloud.openfeign}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>${spring.cloud.netflix.hystrix}</version>
+            </dependency>
+            <!-- feign + hystrix -->
+
+            <!-- springcloud.oauth2 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${springcloud.oauth2.version}</version>
+            </dependency>
+            <!-- springcloud.oauth2 -->
+
+            <!--整合swagger-ui-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!-- 整合swagger-ui -->
+
+            <!-- 本地jar -->
+            <!-- common -->
+            <dependency>
+                <groupId>com.rao</groupId>
+                <artifactId>rain-common-util</artifactId>
+                <version>${rain.common.util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rao</groupId>
+                <artifactId>rain-extend-util</artifactId>
+                <version>${rain.extend.util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rao</groupId>
+                <artifactId>rain-api</artifactId>
+                <version>${rain.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rao</groupId>
+                <artifactId>rain-server-util</artifactId>
+                <version>${rain.server.util.version}</version>
+            </dependency>
+            <!-- common -->
+
+            <!-- configuration -->
+            <dependency>
+                <groupId>com.rao</groupId>
+                <artifactId>rain-configuration-feign</artifactId>
+                <version>${rain.configuration.feign}</version>
+            </dependency>
+            <!-- configuration -->
+
+            <!-- feign-client -->
+            <dependency>
+                <groupId>com.rao</groupId>
+                <artifactId>rain-payment-feign-client</artifactId>
+                <version>${rain.payment.feign.client}</version>
+            </dependency>
+            <!-- feign-client -->
+            <!-- 本地jar -->
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

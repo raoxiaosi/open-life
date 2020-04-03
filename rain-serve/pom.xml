@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>rain-storage</module>
+        <module>rain-support</module>
+        <module>rain-content</module>
+        <module>rain-user</module>
+        <module>rain-quartz</module>
+        <module>rain-log</module>
+        <module>rain-message</module>
+        <module>rain-payment</module>
+    </modules>
+
+    <!-- 父工程 -->
+    <parent>
+        <artifactId>rain</artifactId>
+        <groupId>com.rao</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.rao</groupId>
+    <artifactId>rain-serve</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <dependencies>
+
+        <!-- 本地 jar -->
+        <!-- 微服务基本 jar -->
+        <dependency>
+            <groupId>com.rao</groupId>
+            <artifactId>rain-server-util</artifactId>
+        </dependency>
+        <!-- 微服务基本 jar -->
+        <!-- 本地 jar -->
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
