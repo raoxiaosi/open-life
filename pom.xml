@@ -40,7 +40,7 @@
         <hutool.version>4.2.1</hutool.version>
         <shiro.version>1.4.0</shiro.version>
         <swagger.version>2.9.1</swagger.version>
-        <fastjson.version>1.2.58</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <user_agent_utils.version>1.21</user_agent_utils.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
         <jackson.databind.version>2.9.10.3</jackson.databind.version>
